@@ -12,9 +12,9 @@ FROM centos:6
 MAINTAINER wuhui "wuhui@shinc.com"
 ENV REFRESHED_AT 2015-05-29
 
-ADD ./git-2.3.0.tar.gz	/root
-ADD ./vim-7.3.tar.bz2	/root
-ADD ./vim.tar.gz		/root
+ADD ./git-2.3.0.tar.gz		/root
+ADD ./vim-7.3.tar.bz2		/root
+ADD ./vim.tar.gz			/root
 
 
 WORKDIR /root
@@ -56,6 +56,8 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 
 ADD ./run.sh			/
 RUN chmod 755 /run.sh
+
+ADD ./authorized_keys /root/.ssh/authorized_keys
 
 CMD ['/run.sh']
 

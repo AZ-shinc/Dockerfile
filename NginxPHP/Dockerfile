@@ -68,7 +68,7 @@ RUN yum install -y php-pecl-memcache
 ##nginx conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
-ADD ./test.conf /etc/nginx/conf.d/
+ADD ./ip.conf /etc/nginx/conf.d/
 
 ##php conf
 RUN sed -e 's/;date\.timezone =/date\.timezone = Asia\/Shanghai/' -i /etc/php.ini
@@ -78,6 +78,9 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 
 ADD ./run.sh			/
 RUN chmod 755 /run.sh
+
+RUN mkdir -p /var/log/nginx/cupid
+ADD ./authorized_keys /root/.ssh/authorized_keys
 
 CMD ['/run.sh']
 
