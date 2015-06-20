@@ -3,6 +3,7 @@
 ##Base
 	
 	基础的Dockerfile
+	安装有	git vim sshd
 
 ##Tengine
 
