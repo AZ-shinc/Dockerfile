@@ -48,6 +48,8 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 
 ADD ./run.sh			/
 RUN chmod 755 /run.sh
+RUN mkdir /root/.ssh
+ADD ./authorized_keys /root/.ssh/authorized_keys
 
 CMD ['/run.sh']
 
