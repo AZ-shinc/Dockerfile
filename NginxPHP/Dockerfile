@@ -35,7 +35,7 @@ RUN yum install -y php-pecl-memcache
 ##nginx conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
-ADD ./ip.conf /etc/nginx/conf.d/
+#ADD ./ip.conf /etc/nginx/conf.d/
 
 ##php conf
 RUN sed -e 's/;date\.timezone =/date\.timezone = Asia\/Shanghai/' -i /etc/php.ini
