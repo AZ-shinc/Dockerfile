@@ -11,5 +11,7 @@
 
 		nginx1.8
 
-		php5.3
+		php5.6
+
+		composer
 
