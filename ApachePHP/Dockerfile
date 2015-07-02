@@ -33,8 +33,8 @@ RUN rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
 
 RUN yum -y install php56w.x86_64 php56w-cli.x86_64 php56w-common.x86_64 php56w-gd.x86_64 php56w-ldap.x86_64 php56w-mbstring.x86_64 php56w-mcrypt.x86_64 php56w-mysql.x86_64 php56w-pdo.x86_64 php56w-fpm.x86_64
 
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
+#RUN curl -sS https://getcomposer.org/installer | php
+ADD ./composer /usr/local/bin
 
 ##php conf
 #RUN sed -e 's/;date\.timezone =/date\.timezone = Asia\/Shanghai/' -i /etc/php.ini
