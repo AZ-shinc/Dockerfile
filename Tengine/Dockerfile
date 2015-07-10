@@ -4,7 +4,7 @@
 #Software installed:
 #					Tengine	
 
-FROM nester/base:1
+FROM wuhui/base:1
 MAINTAINER wuhui "wuhui@shinc.com"
 ENV REFRESHED_AT 2015-05-29
 
