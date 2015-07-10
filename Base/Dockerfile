@@ -42,6 +42,8 @@ RUN yum -y install ncurses ncurses-devel
 #install vim 7.3
 RUN cd vim73 && ./configure --enable-netbeans --disable-selinux --enable-multibyte --enable-fontset --with-vim-name=vi --with-features=huge && make && make install
 
+RUN yum clean all
+
 
 RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
@@ -50,6 +52,8 @@ ADD ./run.sh			/
 RUN chmod 755 /run.sh
 RUN mkdir /root/.ssh
 ADD ./authorized_keys /root/.ssh/authorized_keys
+
+RUN rm -rf /root/git-2.3.0 /root/vim-7.3
 
 CMD ['/run.sh']
 
