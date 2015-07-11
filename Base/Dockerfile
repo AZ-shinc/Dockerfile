@@ -54,8 +54,16 @@ ADD ./run.sh			/
 RUN chmod 755 /run.sh
 RUN mkdir /root/.ssh
 ADD ./authorized_keys /root/.ssh/authorized_keys
+RUN chmod 600 /root/.ssh/authorized_keys
 
-RUN rm -rf /root/git-2.3.0 /root/vim-7.3
+RUN rm -rf /root/git-2.3.0
+RUN rm -rf /root/vim-7.3
+
+RUN yum -y install sudo
+
+RUN useradd admin
+RUN echo "admin:admin" | chpasswd
+RUN echo "admin		ALL=(ALL)		ALL"	>> /etc/sudoers
 
 CMD ['/run.sh']
 
