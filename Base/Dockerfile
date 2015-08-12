@@ -61,9 +61,9 @@ RUN rm -rf /root/vim-7.3
 
 RUN yum -y install sudo
 
-RUN useradd admin
-RUN echo "admin:admin" | chpasswd
-RUN echo "admin		ALL=(ALL)		ALL"	>> /etc/sudoers
+#RUN useradd admin
+RUN echo "root:root" | chpasswd
+#RUN echo "admin		ALL=(ALL)		ALL"	>> /etc/sudoers
 
 CMD ['/run.sh']
 

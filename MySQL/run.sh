@@ -2,5 +2,5 @@
 
 /usr/sbin/sshd -D &
 
-/etc/init.d/mysqld start
+/etc/init.d/mysql start
 /bin/bash

@@ -20,7 +20,7 @@ RUN cd node-v0.12.4 && ./configure && make && make install
 RUN cp /usr/local/bin/node	/usr/sbin/
 RUN cp /usr/local/bin/npm	/usr/sbin/npm
 
-RUN npm install -g express
+#RUN npm install -g express
 RUN npm install -g supervisor
 
 #RUN cp /usr/local/bin/supervisor /usr/sbin/
